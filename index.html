@@ -3,112 +3,281 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Bát Việt | Gốm Bát Tràng hiện đại</title>
-  <meta name="description" content="Bát Việt - Gốm Bát Tràng thiết kế hiện đại, tinh tế và mang bản sắc Việt.">
+  <title>Bát Việt | Gốm Bát Tràng</title>
+  <meta name="description" content="Bát Việt - cửa hàng gốm Bát Tràng hiện đại, thủ công và mang bản sắc Việt.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;1,500;1,600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 <header class="header">
   <div class="container nav">
     <a class="logo" href="#home">BÁT<span>VIỆT</span></a>
+
     <nav id="navMenu">
       <a href="#home">Trang chủ</a>
       <a href="#products">Sản phẩm</a>
       <a href="#story">Câu chuyện</a>
       <a href="#contact">Liên hệ</a>
     </nav>
-    <button class="cart-btn" onclick="openCart()">🛒 <span>Giỏ hàng</span> <b id="cartCount">0</b></button>
-    <button class="menu-btn" onclick="toggleMenu()">☰</button>
+
+    <button class="cart-btn" onclick="openCart()" aria-label="Mở giỏ hàng">
+      🛒 <span>Giỏ hàng</span>
+      <b id="cartCount">0</b>
+    </button>
+
+    <button class="menu-btn" onclick="toggleMenu()" aria-label="Menu">☰</button>
   </div>
 </header>
 
 <main id="home">
+
 <section class="hero">
   <div class="container hero-grid">
     <div class="hero-copy">
       <p class="eyebrow">GỐM BÁT TRÀNG · THIẾT KẾ HIỆN ĐẠI</p>
       <h1>Chạm vào<br><em>hồn Việt.</em></h1>
-      <p class="hero-text">Những sản phẩm gốm thủ công được tạo nên từ đất, lửa và bàn tay người nghệ nhân Bát Tràng — dành cho nhịp sống hiện đại.</p>
+      <p class="hero-text">
+        Những sản phẩm gốm thủ công lấy cảm hứng từ Bát Tràng,
+        được lựa chọn cho không gian sống hiện đại.
+      </p>
+
       <div class="hero-actions">
         <a class="btn primary" href="#products">Khám phá sản phẩm</a>
         <a class="btn secondary" href="#story">Câu chuyện Bát Việt →</a>
       </div>
     </div>
+
     <div class="hero-art">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4d/Bat_Trang_pottery_for_sale_in_Au_Co%2C_Tay_Ho_02.jpg/1920px-Bat_Trang_pottery_for_sale_in_Au_Co%2C_Tay_Ho_02.jpg" alt="Sản phẩm gốm Bát Tràng" loading="eager">
-      <div class="art-overlay"><span>HANDCRAFTED<br>IN VIETNAM</span></div>
+      <img
+        src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4d/Bat_Trang_pottery_for_sale_in_Au_Co%2C_Tay_Ho_02.jpg/1280px-Bat_Trang_pottery_for_sale_in_Au_Co%2C_Tay_Ho_02.jpg"
+        alt="Các sản phẩm gốm Bát Tràng"
+      >
+      <div class="art-overlay">
+        <span>HANDCRAFTED<br>IN VIETNAM</span>
+      </div>
     </div>
   </div>
 </section>
+
 
 <section class="categories">
   <div class="container">
+
     <div class="section-head">
-      <div><p class="eyebrow">BỘ SƯU TẬP</p><h2>Đẹp từ những điều<br><em>gần gũi.</em></h2></div>
-      <p>Thiết kế tối giản, dễ sử dụng và phù hợp với không gian sống hiện đại.</p>
+      <div>
+        <p class="eyebrow">BỘ SƯU TẬP</p>
+        <h2>Đẹp từ những điều<br><em>gần gũi.</em></h2>
+      </div>
+      <p>
+        Thiết kế tối giản, dễ sử dụng và phù hợp
+        với không gian sống hiện đại.
+      </p>
     </div>
+
     <div class="category-grid">
-      <a href="#products" onclick="filterProducts('all')" class="category-card cat1" style="background-image:url('https://upload.wikimedia.org/wikipedia/commons/8/80/Bat_Trang_pottery_for_sale_in_Au_Co%2C_Tay_Ho_01.jpg')"><span>01</span><strong>Bát & Đĩa</strong><small>Cho bàn ăn Việt</small></a>
-      <a href="#products" onclick="filterProducts('cup')" class="category-card cat2" style="background-image:url('https://upload.wikimedia.org/wikipedia/commons/thumb/4/4d/Bat_Trang_pottery_for_sale_in_Au_Co%2C_Tay_Ho_02.jpg/1920px-Bat_Trang_pottery_for_sale_in_Au_Co%2C_Tay_Ho_02.jpg')"><span>02</span><strong>Cốc & Ly</strong><small>Cho khoảnh khắc thường ngày</small></a>
-      <a href="#products" onclick="filterProducts('gift')" class="category-card cat3" style="background-image:url('https://upload.wikimedia.org/wikipedia/commons/2/2a/Bat_Trang_pottery_and_ceramics_village_in_2016_03.jpg')"><span>03</span><strong>Quà tặng</strong><small>Trao một nét Việt</small></a>
+
+      <a href="#products"
+         onclick="filterProducts('plate')"
+         class="category-card cat1"
+         style="background-image:url('https://upload.wikimedia.org/wikipedia/commons/thumb/8/80/Bat_Trang_pottery_for_sale_in_Au_Co%2C_Tay_Ho_01.jpg/1280px-Bat_Trang_pottery_for_sale_in_Au_Co%2C_Tay_Ho_01.jpg')">
+        <span>01</span>
+        <strong>Bát & Đĩa</strong>
+        <small>Cho bàn ăn Việt</small>
+      </a>
+
+      <a href="#products"
+         onclick="filterProducts('cup')"
+         class="category-card cat2"
+         style="background-image:url('https://upload.wikimedia.org/wikipedia/commons/thumb/4/4d/Bat_Trang_pottery_for_sale_in_Au_Co%2C_Tay_Ho_02.jpg/1280px-Bat_Trang_pottery_for_sale_in_Au_Co%2C_Tay_Ho_02.jpg')">
+        <span>02</span>
+        <strong>Cốc & Ly</strong>
+        <small>Cho khoảnh khắc thường ngày</small>
+      </a>
+
+      <a href="#products"
+         onclick="filterProducts('gift')"
+         class="category-card cat3"
+         style="background-image:url('https://upload.wikimedia.org/wikipedia/commons/thumb/2/2a/Bat_Trang_pottery_and_ceramics_village_in_2016_03.jpg/1280px-Bat_Trang_pottery_and_ceramics_village_in_2016_03.jpg')">
+        <span>03</span>
+        <strong>Quà tặng</strong>
+        <small>Trao một nét Việt</small>
+      </a>
+
     </div>
   </div>
 </section>
+
 
 <section id="products" class="products-section">
   <div class="container">
+
     <div class="section-head">
-      <div><p class="eyebrow">CỬA HÀNG</p><h2>Sản phẩm nổi bật</h2></div>
+      <div>
+        <p class="eyebrow">CỬA HÀNG</p>
+        <h2>Sản phẩm nổi bật</h2>
+      </div>
+
       <div class="filters">
-        <button class="filter active" onclick="filterProducts('all',this)">Tất cả</button>
-        <button class="filter" onclick="filterProducts('cup',this)">Cốc & Ly</button>
-        <button class="filter" onclick="filterProducts('plate',this)">Bát & Đĩa</button>
-        <button class="filter" onclick="filterProducts('gift',this)">Quà tặng</button>
+        <button class="filter active" onclick="filterProducts('all', this)">Tất cả</button>
+        <button class="filter" onclick="filterProducts('cup', this)">Cốc & Ly</button>
+        <button class="filter" onclick="filterProducts('plate', this)">Bát & Đĩa</button>
+        <button class="filter" onclick="filterProducts('gift', this)">Quà tặng</button>
       </div>
     </div>
+
     <div id="productGrid" class="product-grid"></div>
+
   </div>
 </section>
+
 
 <section id="story" class="story">
   <div class="container story-grid">
-    <div class="story-image"><img src="https://upload.wikimedia.org/wikipedia/commons/2/2a/Bat_Trang_pottery_and_ceramics_village_in_2016_03.jpg" alt="Làng gốm Bát Tràng" loading="lazy"><div class="stamp">BAT<br>TRANG</div></div>
+
+    <div class="story-image">
+      <img
+        src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2a/Bat_Trang_pottery_and_ceramics_village_in_2016_03.jpg/1280px-Bat_Trang_pottery_and_ceramics_village_in_2016_03.jpg"
+        alt="Làng gốm Bát Tràng"
+      >
+      <div class="stamp">BAT<br>TRANG</div>
+    </div>
+
     <div class="story-copy">
       <p class="eyebrow">CÂU CHUYỆN</p>
       <h2>Từ đất và lửa,<br>thành một phần <em>đời sống.</em></h2>
-      <p>Bát Việt lấy cảm hứng từ làng nghề Bát Tràng — nơi nghề gốm đã trở thành một phần của văn hóa Việt. Chúng tôi chọn cách kể lại câu chuyện ấy bằng những thiết kế giản dị, phù hợp với căn nhà và nhịp sống hôm nay.</p>
-      <div class="story-stats"><div><b>700+</b><span>Năm lịch sử làng nghề</span></div><div><b>100%</b><span>Thủ công & hoàn thiện</span></div><div><b>VN</b><span>Thiết kế từ cảm hứng Việt</span></div></div>
+
+      <p>
+        Bát Việt lấy cảm hứng từ làng nghề Bát Tràng —
+        nơi nghề gốm trở thành một phần của văn hóa Việt.
+        Chúng tôi kể lại câu chuyện ấy bằng những thiết kế
+        giản dị, phù hợp với căn nhà và nhịp sống hôm nay.
+      </p>
+
+      <div class="story-stats">
+        <div>
+          <b>700+</b>
+          <span>Năm lịch sử làng nghề</span>
+        </div>
+        <div>
+          <b>100%</b>
+          <span>Cảm hứng thủ công</span>
+        </div>
+        <div>
+          <b>VN</b>
+          <span>Thiết kế từ Việt Nam</span>
+        </div>
+      </div>
     </div>
+
   </div>
 </section>
+
 
 <section class="values">
   <div class="container value-grid">
-    <div><span>01</span><h3>Thủ công</h3><p>Mỗi sản phẩm mang dấu ấn riêng từ đôi tay người thợ.</p></div>
-    <div><span>02</span><h3>Hiện đại</h3><p>Ngôn ngữ thiết kế tối giản, phù hợp với không gian đương đại.</p></div>
-    <div><span>03</span><h3>Bản sắc</h3><p>Giữ lại tinh thần Việt trong từng hình dáng và câu chuyện.</p></div>
+
+    <div>
+      <span>01</span>
+      <h3>Thủ công</h3>
+      <p>Mỗi sản phẩm mang dấu ấn riêng từ đôi tay người thợ.</p>
+    </div>
+
+    <div>
+      <span>02</span>
+      <h3>Hiện đại</h3>
+      <p>Ngôn ngữ thiết kế tối giản, phù hợp không gian đương đại.</p>
+    </div>
+
+    <div>
+      <span>03</span>
+      <h3>Bản sắc</h3>
+      <p>Giữ lại tinh thần Việt trong từng hình dáng và câu chuyện.</p>
+    </div>
+
   </div>
 </section>
+
 
 <section id="contact" class="contact">
   <div class="container contact-grid">
-    <div><p class="eyebrow">KẾT NỐI</p><h2>Mang một chút<br><em>Việt Nam</em> về nhà.</h2><p>Đăng ký để nhận thông tin bộ sưu tập mới và ưu đãi dành riêng cho khách hàng.</p></div>
-    <form onsubmit="subscribe(event)"><input type="email" id="email" placeholder="Email của bạn" required><button class="btn primary">Đăng ký →</button><small id="subscribeMsg"></small></form>
+
+    <div>
+      <p class="eyebrow">KẾT NỐI</p>
+      <h2>Mang một chút<br><em>Việt Nam</em> về nhà.</h2>
+      <p>
+        Đăng ký để nhận thông tin bộ sưu tập mới
+        và ưu đãi dành riêng cho khách hàng.
+      </p>
+    </div>
+
+    <form onsubmit="subscribe(event)">
+      <input type="email" id="email" placeholder="Email của bạn" required>
+      <button class="btn primary">Đăng ký →</button>
+      <small id="subscribeMsg"></small>
+    </form>
+
   </div>
 </section>
+
 </main>
 
-<footer><div class="container footer-grid"><div><a class="logo" href="#home">BÁT<span>VIỆT</span></a><p>Gốm Bát Tràng · Thiết kế hiện đại · Made in Vietnam</p></div><div><b>Khám phá</b><a href="#products">Sản phẩm</a><a href="#story">Câu chuyện</a></div><div><b>Liên hệ</b><p>hello@batviet.vn</p><p>Hà Nội, Việt Nam</p></div></div><div class="copyright">© 2026 Bát Việt. Website mô phỏng phục vụ học tập. Ảnh: Vuong Tri Binh / Wikimedia Commons, CC BY-SA 4.0.</div></footer>
+
+<footer>
+  <div class="container footer-grid">
+
+    <div>
+      <a class="logo" href="#home">BÁT<span>VIỆT</span></a>
+      <p>Gốm Bát Tràng · Thiết kế hiện đại · Made in Vietnam</p>
+    </div>
+
+    <div>
+      <b>Khám phá</b>
+      <a href="#products">Sản phẩm</a>
+      <a href="#story">Câu chuyện</a>
+    </div>
+
+    <div>
+      <b>Liên hệ</b>
+      <p>hello@batviet.vn</p>
+      <p>Hà Nội, Việt Nam</p>
+    </div>
+
+  </div>
+
+  <div class="copyright">
+    © 2026 Bát Việt. Website mô phỏng phục vụ học tập.
+    Ảnh: Wikimedia Commons.
+  </div>
+</footer>
+
 
 <div id="cartModal" class="modal" onclick="closeCart(event)">
   <div class="cart-panel" onclick="event.stopPropagation()">
-    <div class="cart-top"><h2>Giỏ hàng</h2><button onclick="closeCart()">×</button></div>
+
+    <div class="cart-top">
+      <h2>Giỏ hàng</h2>
+      <button onclick="closeCart()">×</button>
+    </div>
+
     <div id="cartItems"></div>
-    <div class="cart-total"><span>Tổng cộng</span><strong id="cartTotal">0 ₫</strong></div>
-    <button class="btn primary checkout" onclick="checkout()">Tiến hành đặt hàng</button>
+
+    <div class="cart-total">
+      <span>Tổng cộng</span>
+      <strong id="cartTotal">0 ₫</strong>
+    </div>
+
+    <button class="btn primary checkout" onclick="checkout()">
+      Tiến hành đặt hàng
+    </button>
+
   </div>
 </div>
+
 <div id="toast"></div>
+
 <script src="script.js"></script>
 </body>
 </html>
