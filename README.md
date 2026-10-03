@@ -17,3 +17,7 @@ Website mô phỏng phục vụ bài tập thương mại điện tử.
 - Lưu giỏ hàng bằng LocalStorage
 - Form đăng ký email
 - Điều hướng theo section
+
+
+## Hình ảnh
+Website đã được bổ sung ảnh gốm Bát Tràng từ Wikimedia Commons. Các ảnh sử dụng trong bản này được phát hành theo CC BY-SA 4.0; thông tin tác giả/giấy phép được ghi ở cuối website.

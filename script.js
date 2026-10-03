@@ -1,12 +1,12 @@
 const products=[
-{id:1,name:"Bộ cốc Gió",desc:"Set 2 cốc · Men xanh",price:289000,type:"cup",cls:"c2",shape:"blue"},
-{id:2,name:"Đĩa Mộc",desc:"Đường kính 20cm · Men tự nhiên",price:179000,type:"plate",cls:"c1",shape:"cream round"},
-{id:3,name:"Bình An",desc:"Cao 25cm · Men hỏa biến",price:459000,type:"gift",cls:"c3",shape:""},
-{id:4,name:"Bộ quà Việt",desc:"Cốc + đĩa + hộp quà",price:599000,type:"gift",cls:"c4",shape:"dark"},
-{id:5,name:"Cốc Đất",desc:"Set 2 cốc · Men nâu",price:249000,type:"cup",cls:"c4",shape:"dark"},
-{id:6,name:"Bát Cơm Nhà",desc:"Set 4 bát · Men kem",price:329000,type:"plate",cls:"c1",shape:"cream"},
-{id:7,name:"Ly Sen",desc:"Set 2 ly · Men xanh",price:269000,type:"cup",cls:"c2",shape:"blue"},
-{id:8,name:"Lọ An Nhiên",desc:"Cao 20cm · Men nâu",price:389000,type:"gift",cls:"c3",shape:""}
+{id:1,name:"Bộ cốc Gió",desc:"Set 2 cốc · Gốm Bát Tràng",price:289000,type:"cup",image:"https://upload.wikimedia.org/wikipedia/commons/thumb/4/4d/Bat_Trang_pottery_for_sale_in_Au_Co%2C_Tay_Ho_02.jpg/1920px-Bat_Trang_pottery_for_sale_in_Au_Co%2C_Tay_Ho_02.jpg"},
+{id:2,name:"Đĩa Mộc",desc:"Đĩa gốm thủ công · Men tự nhiên",price:179000,type:"plate",image:"https://upload.wikimedia.org/wikipedia/commons/8/80/Bat_Trang_pottery_for_sale_in_Au_Co%2C_Tay_Ho_01.jpg"},
+{id:3,name:"Bình An",desc:"Bình trang trí · Gốm Bát Tràng",price:459000,type:"gift",image:"https://upload.wikimedia.org/wikipedia/commons/2/2a/Bat_Trang_pottery_and_ceramics_village_in_2016_03.jpg"},
+{id:4,name:"Bộ quà Việt",desc:"Quà tặng · Thiết kế thủ công",price:599000,type:"gift",image:"https://upload.wikimedia.org/wikipedia/commons/6/61/Bat_Trang_pottery_and_ceramics_village_in_2016_14.jpg"},
+{id:5,name:"Cốc Đất",desc:"Set 2 cốc · Men nâu",price:249000,type:"cup",image:"https://upload.wikimedia.org/wikipedia/commons/8/80/Bat_Trang_pottery_for_sale_in_Au_Co%2C_Tay_Ho_01.jpg"},
+{id:6,name:"Bát Cơm Nhà",desc:"Set 4 bát · Men gốm",price:329000,type:"plate",image:"https://upload.wikimedia.org/wikipedia/commons/thumb/4/4d/Bat_Trang_pottery_for_sale_in_Au_Co%2C_Tay_Ho_02.jpg/1920px-Bat_Trang_pottery_for_sale_in_Au_Co%2C_Tay_Ho_02.jpg"},
+{id:7,name:"Ly Sen",desc:"Set 2 ly · Gốm thủ công",price:269000,type:"cup",image:"https://upload.wikimedia.org/wikipedia/commons/6/61/Bat_Trang_pottery_and_ceramics_village_in_2016_14.jpg"},
+{id:8,name:"Lọ An Nhiên",desc:"Lọ trang trí · Gốm Bát Tràng",price:389000,type:"gift",image:"https://upload.wikimedia.org/wikipedia/commons/2/2a/Bat_Trang_pottery_and_ceramics_village_in_2016_03.jpg"}
 ];
 let cart=JSON.parse(localStorage.getItem("batvietCart")||"[]");
 
@@ -15,7 +15,7 @@ function renderProducts(type="all"){
  const grid=document.getElementById("productGrid");
  grid.innerHTML=products.filter(p=>type==="all"||p.type===type).map(p=>`
  <article class="product-card">
-  <div class="product-image ${p.cls}"><div class="shape ${p.shape}"></div></div>
+  <div class="product-image"><img src="${p.image}" alt="${p.name}" loading="lazy"></div>
   <div class="product-info"><h3>${p.name}</h3><p>${p.desc}</p><span class="price">${money(p.price)}</span>
   <button class="add" onclick="addToCart(${p.id})">+ Thêm</button></div>
  </article>`).join("");
